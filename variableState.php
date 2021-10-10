@@ -31,21 +31,9 @@ $flag = true;
 echo "<table><tr style='font-weight: bold; background-color: chocolate; color: white'><td>Contenido de \$var</td><td>isset(\$var)</td><td>empty(\$var)</td><td>(bool) \$var</td></tr>";
 
 for ($i = 0; $i < count($varArray); $i++) {
-  if (isset($varArray[$i]) == 1) {
-    $isset = 'true';
-  } else {
-    $isset = 'false';
-  }
-  if (empty($varArray[$i]) == 1) {
-    $empty = 'true';
-  } else {
-    $empty = 'false';
-  }
-  if ((bool)$varArray[$i] == 1) {
-    $boolValue = 'true';
-  } else {
-    $boolValue = 'false';
-  }
+  $isset = isset($varArray[$i]) == 1 ? 'true' : 'false';
+  $empty = empty($varArray[$i]) == 1 ? 'true' : 'false';
+  $boolValue = (bool) $varArray[$i] == 1 ? 'true' : 'false';
 
   if ($flag) {
     echo "<tr style='background-color: aliceblue'>";
