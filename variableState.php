@@ -22,27 +22,27 @@
 // Turn off all error reporting
 error_reporting(0);
 
-$unsetVar = '';
-unset($unsetVar);
-$varArray = [null, 0, true, false, '0', '', 'foo', array(), $unsetVar];
-$printedValues = ['$var = null', '$var = 0', '$var = true', '$var = false', '$var = "0"', '$var = ""', '$var = "foo"', '$var = array()', 'unset($var)'];
+$unset_var = '';
+unset($unset_var);
+$var_array = [null, 0, true, false, '0', '', 'foo', array(), $unset_var];
+$printed_values = ['$var = null', '$var = 0', '$var = true', '$var = false', '$var = "0"', '$var = ""', '$var = "foo"', '$var = array()', 'unset($var)'];
 $flag = true;
 
 echo "<table><tr style='font-weight: bold; background-color: chocolate; color: white'><td>Contenido de \$var</td><td>isset(\$var)</td><td>empty(\$var)</td><td>(bool) \$var</td></tr>";
 
-for ($i = 0; $i < count($varArray); $i++) {
-  $isset = isset($varArray[$i]) == 1 ? 'true' : 'false';
-  $empty = empty($varArray[$i]) == 1 ? 'true' : 'false';
-  $boolValue = (bool) $varArray[$i] == 1 ? 'true' : 'false';
+for ($i = 0; $i < count($var_array); $i++) {
+  $isset = isset($var_array[$i]) == 1 ? 'true' : 'false';
+  $empty = empty($var_array[$i]) == 1 ? 'true' : 'false';
+  $bool_value = (bool) $var_array[$i] == 1 ? 'true' : 'false';
 
   if ($flag) {
     echo "<tr style='background-color: aliceblue'>";
-    echo "<td style='font-weight: bold'>$printedValues[$i]</td><td>$isset</td><td>$empty</td><td>$boolValue</td>";
+    echo "<td style='font-weight: bold'>$printed_values[$i]</td><td>$isset</td><td>$empty</td><td>$bool_value</td>";
     echo "</tr>";
     $flag = false;
   } else {
     echo "<tr style='background-color: cornsilk'>";
-    echo "<td style='font-weight: bold'>$printedValues[$i]</td><td>$isset</td><td>$empty</td><td>$boolValue</td>";
+    echo "<td style='font-weight: bold'>$printed_values[$i]</td><td>$isset</td><td>$empty</td><td>$bool_value</td>";
     echo "</tr>";
     $flag = true;
   }
